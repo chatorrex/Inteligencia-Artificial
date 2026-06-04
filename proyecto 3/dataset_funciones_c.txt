@@ -1,0 +1,517 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <math.h>
+#include <ctype.h>
+
+// Sumar
+int sumar(int num1, int num2) {
+    int res = num1 + num2;
+    return res;
+}
+
+// Restar
+int restar(int num1, int num2) {
+    int res = num1 - num2;
+    return res;
+}
+
+// Multiplicar
+int multiplicar(int num1, int num2) {
+    int res = num1 * num2;
+    return res;
+}
+
+// Dividir
+int dividir(int num1, int num2) {
+    int res = num1 / num2;
+    return res;
+}
+
+// Potencia
+int potencias(int num1, int num2) {
+    int res = 1;
+
+    for (int i = 0; i < num2; i++) {
+        res *= num1;
+    }
+
+    return res;
+}
+
+// Área de triángulo
+double areaTriangulo(int base, int altura) {
+    double res = (base * altura) / 2;
+    return res;
+}
+
+// Área de círculo
+double areaCirculo(int radio) {
+    double res = 3.14159 * radio * radio;
+    return res;
+}
+
+// Longitud de cadena
+int longitudCadena(char cadena[]) {
+    int res = strlen(cadena);
+    return res;
+}
+
+// Invertir cadena
+void invertirCadena(char cadena[], char resultado[]) {
+    int longitud = strlen(cadena);
+
+    for (int i = 0; i < longitud; i++) {
+        resultado[i] = cadena[longitud - 1 - i];
+    }
+
+    resultado[longitud] = '\0';
+}
+
+// Verificar palíndroma
+bool verificarPalindroma(char cadena[]) {
+    int inicio = 0;
+    int fin = strlen(cadena) - 1;
+
+    while (inicio < fin) {
+        if (cadena[inicio] != cadena[fin]) {
+            return false;
+        }
+
+        inicio++;
+        fin--;
+    }
+
+    return true;
+}
+
+// Número de veces que aparece una letra
+int numeroDeLetras(char cadena[], char caracter) {
+    int num = 0;
+
+    for (int i = 0; i < strlen(cadena); i++) {
+        if (cadena[i] == caracter) {
+            num++;
+        }
+    }
+
+    return num;
+}
+
+// Concatenar cadenas
+void concatenar(char cadena1[], char cadena2[], char resultado[]) {
+    strcpy(resultado, cadena1);
+    strcat(resultado, cadena2);
+}
+
+// Área de cuadrado
+int areaCuadrado(int lado) {
+    int res = lado * lado;
+    return res;
+}
+
+// Área de rectángulo
+int areaRectangulo(int base, int altura) {
+    int res = base * altura; // Corregido
+    return res;
+}
+
+// Volumen de esfera
+double volumenEsfera(double radio) {
+    double res = (4.0 / 3.0) * 3.14159 * radio * radio * radio;
+    return res;
+}
+
+// Volumen de cubo
+int volumenCubo(int lado) {
+    int res = lado * lado * lado;
+    return res; // Corregido
+}
+
+// Volumen de prisma rectangular
+int volumenPrisma(int largo, int altura, int profundidad) {
+    int res = largo * altura * profundidad;
+    return res;
+}
+
+// Volumen de pirámide
+double volumenPiramide(double largo, double profundidad, double altura) {
+    double res = (largo * profundidad * altura) / 3.0;
+    return res;
+}
+
+
+// Milímetros
+double milimetrosCentimetros(double num) {
+    double res = num / 10.0;
+    return res;
+}
+
+double milimetrosMetros(double num) {
+    double res = num / 1000.0;
+    return res;
+}
+
+double milimetrosKilometros(double num) {
+    double res = num / 1000000.0;
+    return res;
+}
+
+// Centímetros
+double centimetrosMilimetros(double num) {
+    double res = num * 10.0;
+    return res;
+}
+
+double centimetrosMetros(double num) {
+    double res = num / 100.0;
+    return res;
+}
+
+double centimetrosKilometros(double num) {
+    double res = num / 100000.0;
+    return res;
+}
+
+// Metros
+double metrosMilimetros(double num) {
+    double res = num * 1000.0;
+    return res;
+}
+
+double metrosCentimetros(double num) {
+    double res = num * 100.0;
+    return res;
+}
+
+double metrosKilometros(double num) {
+    double res = num / 1000.0;
+    return res;
+}
+
+// Kilómetros
+double kilometrosMilimetros(double num) {
+    double res = num * 1000000.0;
+    return res;
+}
+
+double kilometrosCentimetros(double num) {
+    double res = num * 100000.0;
+    return res;
+}
+
+double kilometrosMetros(double num) {
+    double res = num * 1000.0;
+    return res;
+}
+
+// Segundos a minutos
+double segundosMinutos(double num) {
+    double res = num / 60.0;
+    return res;
+}
+
+// Segundos a horas
+double segundosHoras(double num) {
+    double res = num / 3600.0;
+    return res;
+}
+
+// Minutos a segundos
+double minutosSegundos(double num) {
+    double res = num * 60.0;
+    return res;
+}
+
+// Minutos a horas
+double minutosHoras(double num) {
+    double res = num / 60.0;
+    return res;
+}
+
+// Horas a segundos
+double horasSegundos(double num) {
+    double res = num * 3600.0;
+    return res;
+}
+
+// Horas a minutos
+double horasMinutos(double num) {
+    double res = num * 60.0;
+    return res;
+}
+
+// Verificar si un número es par
+bool numeroPar(int num) {
+    if (num % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Verificar si un número es impar
+bool numeroImpar(int num) {
+    if (num % 2 != 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// 40 - Cuál número es mayor
+int numeroMayor(int num1, int num2) {
+    int res;
+
+    if (num1 > num2) {
+        res = num1;
+    } else {
+        res = num2;
+    }
+
+    return res;
+}
+
+// 41 - Cuál número es menor
+int numeroMenor(int num1, int num2) {
+    int res;
+
+    if (num1 < num2) {
+        res = num1;
+    } else {
+        res = num2;
+    }
+
+    return res;
+}
+
+// 42 - Cuál cadena es más larga
+char* cadenaMasLarga(char cadena1[], char cadena2[]) {
+    char* res;
+
+    if (strlen(cadena1) > strlen(cadena2)) {
+        res = cadena1;
+    } else {
+        res = cadena2;
+    }
+
+    return res;
+}
+
+// 43 - Cuál cadena es más corta
+char* cadenaMasCorta(char cadena1[], char cadena2[]) {
+    char* res;
+
+    if (strlen(cadena1) < strlen(cadena2)) {
+        res = cadena1;
+    } else {
+        res = cadena2;
+    }
+
+    return res;
+}
+
+// 44 - Si las cadenas son iguales
+bool cadenasIguales(char cadena1[], char cadena2[]) {
+    bool res = false;
+
+    if (strcmp(cadena1, cadena2) == 0) {
+        res = true;
+    }
+
+    return res;
+}
+
+// 45 - Promedio de un arreglo de números
+double promedioArreglo(int arreglo[], int tam) {
+    double res = 0;
+
+    for (int i = 0; i < tam; i++) {
+        res += arreglo[i];
+    }
+
+    res = res / tam;
+
+    return res;
+}
+
+// 46 - Sumatoria de un arreglo de números
+int sumatoriaArreglo(int arreglo[], int tam) {
+    int res = 0;
+
+    for (int i = 0; i < tam; i++) {
+        res += arreglo[i];
+    }
+
+    return res;
+}
+
+// 47 - Hacer toLowerCase
+void hacerToLowerCase(char cadena[]) {
+    for (int i = 0; i < strlen(cadena); i++) {
+        cadena[i] = tolower(cadena[i]);
+    }
+}
+
+// 48 - Hacer toUpperCase
+void hacerToUpperCase(char cadena[]) {
+    for (int i = 0; i < strlen(cadena); i++) {
+        cadena[i] = toupper(cadena[i]);
+    }
+}
+
+// 49 - Contar palabras en una cadena
+int contarPalabras(char cadena[]) {
+    int res = 0;
+
+    if (strlen(cadena) > 0) {
+        res = 1;
+    }
+
+    for (int i = 0; i < strlen(cadena); i++) {
+        if (cadena[i] == ' ') {
+            res++;
+        }
+    }
+
+    return res;
+}
+
+// 50 - Pedir nombre y saludar en un print
+void pedirNombreYSaludar() {
+    char nombre[100];
+
+    printf("Ingrese su nombre: ");
+    fgets(nombre, sizeof(nombre), stdin);
+
+    nombre[strcspn(nombre, "\n")] = '\0';
+
+    printf("Hola %s\n", nombre);
+}
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+// 51 - Primer mayúscula y resto minúsculas
+void primerMayuscula(char cadena[]) {
+
+    if (strlen(cadena) > 0) {
+        cadena[0] = toupper(cadena[0]);
+    }
+
+    for (int i = 1; i < strlen(cadena); i++) {
+        cadena[i] = tolower(cadena[i]);
+    }
+}
+
+// 52 - Factorial
+long long factorial(int num) {
+    long long res = 1;
+
+    for (int i = 1; i <= num; i++) {
+        res *= i;
+    }
+
+    return res;
+}
+
+// 53 - Invertir número de izquierda a derecha
+int invertirNumero(int num) {
+    int res = 0;
+    int aux;
+
+    while (num > 0) {
+        aux = num % 10;
+        res = (res * 10) + aux;
+        num /= 10;
+    }
+
+    return res;
+}
+
+// 55 - Binario a decimal
+int binarioDecimal(int num) {
+    int res = 0;
+    int potencia = 1;
+    int aux;
+
+    while (num > 0) {
+        aux = num % 10;
+        res += aux * potencia;
+        potencia *= 2;
+        num /= 10;
+    }
+
+    return res;
+}
+
+// 56 - Decimal a binario
+long long decimalBinario(int num) {
+    long long res = 0;
+    long long posicion = 1;
+    int aux;
+
+    while (num > 0) {
+        aux = num % 2;
+        res += aux * posicion;
+        posicion *= 10;
+        num /= 2;
+    }
+
+    return res;
+}
+
+// 57 - Hexadecimal a decimal
+int hexadecimalDecimal(char cadena[]) {
+    int res = 0;
+    int longitud = strlen(cadena);
+
+    for (int i = 0; i < longitud; i++) {
+
+        char caracter = toupper(cadena[i]);
+        int valor;
+
+        if (caracter >= '0' && caracter <= '9') {
+            valor = caracter - '0';
+        } else {
+            valor = caracter - 'A' + 10;
+        }
+
+        res = (res * 16) + valor;
+    }
+
+    return res;
+}
+
+// 58 - Decimal a hexadecimal
+void decimalHexadecimal(int num, char cadena[]) {
+
+    char aux[100];
+    int i = 0;
+    int residuo;
+
+    while (num > 0) {
+
+        residuo = num % 16;
+
+        if (residuo < 10) {
+            aux[i] = residuo + '0';
+        } else {
+            aux[i] = residuo - 10 + 'A';
+        }
+
+        i++;
+        num /= 16;
+    }
+
+    aux[i] = '\0';
+
+    int longitud = strlen(aux);
+
+    for (int j = 0; j < longitud; j++) {
+        cadena[j] = aux[longitud - 1 - j];
+    }
+
+    cadena[longitud] = '\0';
+}
